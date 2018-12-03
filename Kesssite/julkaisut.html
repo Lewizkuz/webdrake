@@ -1,40 +1,64 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>homepage 2.0</title>
+		<title>Kess:Julkaisut</title>
 		<link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrinktofit=no">
 	</head>
 	<body>
 		<header>
-			<h1>Keski-Suomen Sarjakuvaseura</h1>
+			<h1 class="text-center">Keski-Suomen Sarjakuvaseura</h1>
 		</header>
 		<nav>
-			<ul>
-				<li> <a href="index.html">Info</a></li>
-				<li> <a href="julkaisut.html">Julkaisut</a></li>
-				<li> <a href="tapahtumat.html" type="active">Tapahtumat</a></li>
+			<ul class="nav nav-tabs nav-fill">
+				<li class="nav-item"> <a class="nav-link" href="index.html">Info</a></li>
+				<li class="nav-item"> <a class="nav-link active" href="julkaisut.html">Julkaisut</a></li>
+				<li class="nav-item"> <a class="nav-link" href="tapahtumat.html" type="active">Tapahtumat</a></li>
 			</ul>
 		</nav>
 		<content>
-		  <section id="content">
+		  <section class="container">
               <h2>Julkaisut</h2>
               <img alt="Seuran albumit" src="images/albumit.png"/>
               <p>
                  Teemme sarjakuva-antologioita niin usein kuin suinkin mahdollista. Yhteensä myytyjä albumeita on jo yli 700 kappaletta!
               </p>
-               <ol>
-				<li>Liha ja Sielu (2011)</li>
-				<li> Lintukodosta pohjoiseen (2012)</li>
-				<li>Väärä numero (2013)</li>
-                <li>Sound of Comics (2015)</li>
-                <li>Päätä vadilla (2017)</li>
-			</ol>
-               <p>
-				Tulossa:
-              </p>
-               <ol>
-                <li>Rakkaus 2.0 (2019)</li>
-			</ol>
+              <div>
+                  <h3>Menneet julkaisut</h3>
+                  <table class="table table-striped">
+                      <tr class="thead-dark">
+                          <th>Julkaisun Nimi</th>
+                          <th>Julkaisun Vuosi</th>
+                      </tr>
+                      <tr>
+                          <td>Liha ja Sielu</td>
+                          <td>2011</td>
+                      </tr>
+                      <tr><td> Lintukodosta pohjoiseen</td>
+                          <td>2012</td>
+                      </tr>
+                      <tr><td>Väärä numero</td>
+                      <td>2013</td></tr>
+                      <tr><td>Sound of Comics</td>
+                      <td>2015</td></tr>
+                      <tr><td>Päätä vadilla</td>
+                      <td>2017</td></tr>
+                  </table>
+                  <h3>Tulevat julkaisut</h3>
+                  <table class="table table-striped">
+                      <tr class="thead-dark">
+                          <th>Julkaisun Nimi</th>
+                          <th>Julkaisun Vuosi</th>
+                      </tr>
+                      <tr>
+                         <td>Rakkaus 2.0</td>
+                         <td>2019</td>
+                      </tr>
+                  </table>
+              </div>
             </section>
             <aside>
                 <h2>Kess Facebookissa</h2>
