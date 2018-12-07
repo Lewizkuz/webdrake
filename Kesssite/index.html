@@ -1,14 +1,16 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="fi">
 	<head>
 		<title>Kess: Homepage</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrinktofit=no">
 		<link rel="stylesheet" href="styles/style.css"/>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrinktofit=no">
 	</head>
 	<body>
+        <div class="container">
 		<header class="">
             <div class="headerinfo">
             </div>
@@ -22,10 +24,11 @@
 				<li class="nav-item"> <a class="nav-link" href="tapahtumat.html" type="active">Tapahtumat</a></li>
 			</ul>
 		</nav>
-		<content class="">
-		  <section class="container">
-              <h2 class="text-center">Meistä yleisesti</h2>
-              <img class="col" alt="Seuran juliste" src="images/juliste.jpg"/>
+		<content class="container row">
+		  <section class="conteiner col-lg-8">
+              <h2 class="text-center">Meistä yleisesti</h2><div class="text-center">
+              <img class="img-fluid text-center w-100" alt="Seuran juliste" src="images/juliste.jpg"/>
+              </div>
               <p>
                   Keski-Suomen Sarjakuvaseura on vuodesta 2010 toiminut 
                   sarjakuvasta innostunut poppoo, joka pyrkii ylläpitämään 
@@ -44,15 +47,19 @@
               <p>
                   Lisätietoa kaikesta KESSin toiminnasta löytää meidän Facebook-sivulta. Kuvia meidän touhuista löytyy KESSin Instagramista.
               </p>
-              <img alt="Seuran logo" src="images/kess-apina.jpg"/>
+              <div class="text-center">
+                  <img alt="Seuran logo" src="images/kess-apina.jpg" class="img-fluid"/>
+              </div>
             </section>
-            <aside>
+             <aside style="col-12 col-lg-4">
                 <h2>Kess Facebookissa</h2>
                 <iframe name="fe19b6332ff7f8" width="500px" height="900px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" allow="encrypted-media" title="fb:page Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/page.php?app_id=249643311490&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F7LloFuHvA7I.js%3Fversion%3D43%23cb%3Df75288fc112fbc%26domain%3Dkeskisuomensarjis.wordpress.com%26origin%3Dhttps%253A%252F%252Fkeskisuomensarjis.wordpress.com%252Ff33c12bb2d538bc%26relation%3Dparent.parent&amp;container_width=300&amp;height=900&amp;hide_cover=false&amp;href=https%3A%2F%2Fwww.facebook.com%2Fpages%2FKeSS%2F330257423689489&amp;locale=fi_FI&amp;sdk=joey&amp;show_facepile=false&amp;show_posts=true&amp;width=500" style="border: none; visibility: visible; width: 300px; height: 900px;" class=""></iframe>
             </aside>
 		</content>
-        <footer>
-            <p>author: Leevi Kukkonen</p>
-        </footer>
+        <footer class="footer text-center">
+                <p>author: Leevi Kukkonen</p>
+                <img alt="sivun loppu" src="images/cropped-kansi_juha-matti_kinnunen.png" class="w-100"/>
+             </footer>
+        </div>
 	</body>
 </html>
