@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!--Kielen ja html-dokumentin alun määritelmä-->
+<html lang="fi">
+<head>
+    <!--Sivun otsikko-->
+    <title>harjoitustyo</title>
+    <!--Charset sivustolle-->
+    <meta charset="UTF-8">
+    <!--Sivuston avainsanat-->
+    <meta name="keywords" content="Insinööri, CSS, C++, Engineer, Designer, Työnhaku, Työnhakija, Web, Web-ohjelmoija, CV">
+    <!--Tekijän nimi-->
+    <meta name="author" content="Leevi Kukkonen">
+    <!--Tyylitiedoston määrittely-->
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <!--Ikonien sijainnin määrittely-->
+    <link rel="stylesheet" href="styles/font-awesome-4.7.0/css/font-awesome.css">
+    <!--Fontin sijainnin määrittely-->
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!--Lightbox-kuvagallerian sijainnin määrittely-->
+    <link rel="stylesheet" href="lightbox2-master/dist/css/lightbox.css">
+</head>
+<body>
+    <!--Sivun asettelu -->
+    <article class="page">
+        <!--Rakenne sisältää otsikon ja sen kuvan. Kattaa 20% näytön koosta-->
+        <section class="header">
+            <!--Otsikkoteksti-->
+            <section class="headertitle">
+                <!--Otsikkosymboli-->
+                    <i class="fa fa-id-card-o fa-5x" aria-hidden="true"></i>
+                <!--Otsikkoteksti-->
+                    <h2>Leevi Kukkonen</h2>
+            </section>
+            <!--Profiilikuvan osio ja kuva-->
+            <section class="headerpic">
+                <img class="headerpic" alt="hi mom" src="styles/naama">
+            </section>
+        </section>
+        <!--Valikko muille sivuille (Näyttää myös nykyisen sivun aktivisena)-->
+        <nav>
+            <ul>
+                <li><a class="active" href="#home"><i class="fa fa-home" aria-hidden="true"></i>Koti</a></li>
+                <li><a href="tyokokemus.html"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Portfolio</a></li>
+                <li><a href="harrastukset.html"><i class="fa fa-camera-retro" aria-hidden="true"></i>Harrastukset</a></li>
+                <li><a href="other.html"><i class="fa fa-sort" aria-hidden="true"></i>Muuta</a></li>
+            </ul>
+        </nav>
+        <!--Sisältölaatikko-1-->
+        <section class="content">
+            <h2>Perustietoja:</h2>
+            <p>Olen 20-vuotias tietotekniikan opiskelija, joka valmistuu tietotekniikan ammattilaiseksi vuonna 2021.</p>
+            <p>Paneudun antaumuksella työhöni, keskityn saadakseni jokaisen työvaiheen kunnolla alusta loppuun ja suuri iloni on nähdä asioiden loksahtavan paikoilleen.</p>
+            <p>Linkkejä painamalla voitte liikkua eri osioihin kiinnostustenne mukaan.<br> Jos olette kinnostunut akateemisista tietotaidosta, valitkaa tyokokemus.<br> Jos haluatte tietää miehestä muuta, valitkaa harrastukset.<br> Jos haluatte saavuttaa minut kiinni erinäisillä tietokanavilla, katsokaa sivun alareunassa olevia yhteystietoja.</p>
+        </section>
+        <!--Sisältölaatikko-2-->
+        <section class="content">
+        <a href="styles/freelance-2906725_1920.png" data-lightbox="img-1" data-title="freelance"><img class="headerpic" alt="freelancepic" src="styles/freelance-2906725_1920.png"></a>
+            <p>Fun fact: Minua on sanottu suomen Jim Carreyksi.</p>
+            <p> Jostain kumman syystä.</p>
+            
+        </section>
+        <!--Footer-osio, jossa yhteistiedot-->
+        <footer>
+            <p>Yhteystiedot: <br> Sähkoposti: leevi.kukkonen@hotmail.com<br>Puhelinnumero: 044-5212339</p>
+        </footer>
+    </article>
+    <!--Lightboxin Javascript-määrittely-->
+    <script src="lightbox2-master/dist/js/lightbox-plus-jquery.js"></script>
+</body>
+</html>

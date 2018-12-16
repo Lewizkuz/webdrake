@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--Kielen ja html-dokumentin alun määritelmä-->
+<html lang="fi">
+<head>
+    <!--Sivun otsikko-->
+    <title>raportti</title>
+</head>
+<body>
+
+Lähdekoodit: <br>
+Header: 
+//Nykyinen tiedosto: Structs.h
+//Toiminta: Struct-rakenteille tarkoitettu headerfile.
+
+//Character-luokka sisältää hahmolle tallennetut HP- ja Luck-pisteet. Käytin tätä, jotta voin asettaa useita hahmoluokkia.
+
+struct character
+{
+	int HP;
+	int Luck;
+};
+//Score-luokka sisältää pelaajan pisteet(points) ja nimen(name) pistelistaa varten.
+struct score
+{
+	char name[10];
+	int points;
+};
+
+//Nykyinen tiedosto: Constants.h
+//Toiminta: Sisältää kaikki constant-muuttujat.
+
+//Bandit-hahmoluokan kestopisteet
+const int HPBANDIT = 10;
+//Bandit-luokan onnipisteet
+const int LKBANDIT = 2;
+//Thief-luokan kestopisteet
+const int HPTHIEF = 5;
+//Thief-luokan onnipisteet
+const int LKTHIEF = 4;
+
+//Nykyinen tiedosto: Source.cpp
+//Toiminta: Pääohjelma. Sisältää kaikkien muuttuvien arvojen alustuksen ja käyttää muita headerfileja.
+
+#include <iostream>
+#include <ctime>
+#include <fstream>
+
+#include "Constants.h";
+#include "Structs.h";
+#include "LuoRandom.cpp";
+#include "GameOver.cpp";
+
+using namespace std;
+
+int main(void)
+{
+	score pelaaja;
+	int valinta = 1;
+	int input = 0;
+	int arvo = 0;
+	character hunter;
+	hunter.HP = 0;
+	hunter.Luck = 0;
+
+	cout << "Welcome to the world of Toriel. The Land of caves and wonders.\nYou are a treasure hunter, who travels across the land and seeks out every nook and cranny in order to find loot worthy of his time.\nNow you must head down a tomb of lost kings, and grab anything you can get your hands on.\nDo not walk carelessly, since there will be monsters lurking down these caves.";
+	while (valinta != 0)
+	{
+		pelaaja.points = 0;
+			cout << "\n\nEnough talk. Choose your treasure hunter:\n\n(1)BANDIT: (HP: " << HPBANDIT << "Luck: " << LKBANDIT << ") Extra durable, not so lucky\n\n(2)THIEF: (HP: " << HPTHIEF << "Luck: " << LKTHIEF << ")Extra lucky, not so durable\n\n(3)DESPERATE:  (HP: " << HPTHIEF << " Luck. " << LKBANDIT << ") Not lucky, nor durable. \n\n(4)RANDOM: (HP: ? Luck: ?) For those who just cannot decide\n\n(0)EXIT: Quit the game\n\nYour pick:";
+			cin >> valinta;
+			switch (valinta)
+			{
+			case 0: 
+				return 0;
+				break;
+			case 1: 
+				hunter.HP = HPBANDIT;
+				hunter.Luck = LKBANDIT; 
+				break;
+			case 2:
+				hunter.HP = HPTHIEF;
+				hunter.Luck = LKTHIEF;
+				break;
+			case 3:
+				hunter.HP = HPTHIEF;
+				hunter.Luck = LKBANDIT;
+				break;
+			case 4:
+				hunter.HP = Luo_Random(HPTHIEF, HPBANDIT);
+				hunter.Luck = Luo_Random(LKBANDIT, LKTHIEF);
+				break;
+			default:
+				break;
+			}
+			cout << "\nSweet! you created a hunter with the health of "<<hunter.HP<<" and a luck of "<< hunter.Luck<< "\n";
+			cout << "Okay lets go hunting!\n------------------------------\nYou enter the cave, but there is no loot at the entrance.\n";
+			do{
+				if (hunter.HP <= 0)
+				{
+					cout << "The monsters you encountered were too much for you. You died. (Score = 0)";
+					pelaaja.points = 0;
+					valinta = Gameover(pelaaja.points);
+					break;
+				}
+				cout << "\nHP: " << hunter.HP << "\nScore: " << pelaaja.points <<"\n1: Go further down the cave\n0: Exit\n\nYour pick: ";
+				cin >> input;
+				if (input != 0) {
+					arvo = Luo_Random(0, hunter.Luck + 1);
+					if (arvo == hunter.Luck)
+					{
+						cout << "\nYou encountered a monster. It got a swing in before you killed it (-1 HP)";
+						hunter.HP--;
+					}
+					else
+					{
+						cout << "\nYou found some gold and you grab some. Nice! (score +1)";
+						pelaaja.points++;
+					}
+				}
+				else valinta = Gameover(pelaaja.points);
+			} while (input != 0);
+	}
+	return 0;
+}    
+    
+Nykyinen tiedosto: GameOver.cpp
+Toiminta: Aliohjelma joka suoritetaan pelin loppuessa. Palauttaa pelaajan syötteen "Haluato pelata uudelleen?" -kysymykseen.
+NOTE: kommentoidut rivit jäänteitä Keskenjääneestä Toplist-viritelmästä.
+*/
+
+#include <iostream>
+#include <fstream>
+#include "Structs.h";
+
+using namespace std;
+
+//Peli loppui ja Score tallennetaan scorelistaan. Myös pelaajan syöte valinnalle: Haluatko pelata uudestaan.
+int Gameover(int points)
+{
+	//ifstream myfile("toplist.txt");
+	score pelaaja;
+	//score toplist[3];
+	//pelaaja.points = points;
+	cout << "\nYou return home after hard day of looting, happy you could keep your life another day.\n The amount of cash you managed to get: " << points << "\n";
+	//cout << "Insert your name (no special marks or spacebar): ";
+	//cin >> pelaaja.name;
+	int syote;
+	cout << "\nWant to try again?\n1: Yeah!\n0:Nope\nYour pick: ";
+	cin >> syote;
+	return syote;
+}
+
+Nykyinen file: LuoRandom.cpp
+Toiminta: LuoRandom-aliohjelma arpoo sekalaisen arvon määriteltyjen minimi- ja maksimiarvojen väliltä. Sekalaisuus saadaan aikaan rand-komennolla.
+*/
+
+#include <iostream>
+#include <ctime>
+using namespace std;
+
+//Arpoo sekalaisen arvon minimi- ja maksimiarvon välillä.
+int Luo_Random(int minvalue, int maxvalue)
+{
+	int tmp = rand() % (maxvalue - minvalue) + minvalue;
+	return tmp;
+}
+</body>
+</html>
