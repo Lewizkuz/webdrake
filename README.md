@@ -5,12 +5,12 @@ Belongs to **Lewizkuz**. Do not touch if you're not a **certified** Lewiz.
 ##ToDo:
 - [x] Do a wicked good README.md :+1:
 - [x] Waste a huge amount of time on **_pointless_ anti humor**
-- [] Kesshomepage <<< **IMPORTANT**
-- [] 
-- [] 
-- [] 
-- [] 
-- [] Homepage version 2.0 
+- [ ] Kesshomepage <<< **IMPORTANT**
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] 
+- [ ] Homepage version 2.0 
  > This seems to never get done believe me
  Lewiz
 
