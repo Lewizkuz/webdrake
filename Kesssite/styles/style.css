@@ -1,8 +1,22 @@
 * {
     margin: 0;
     padding: 0;
+    
+    font-family: 'Open Sans', sans-serif;
 }
-img {
+img, iframe {
     width: 100%;
-    height: auto;
+    border-radius: 1em;
+}
+body {
+    background-color: #2948b5;
+    color: #f8f8f8;
+}
+header, h2, p, content, section{
+    padding: 2%;
+}
+section {
+    background-color: #1f166a;
+    border: .3em solid black;
+    border-radius: 3em;
 }
