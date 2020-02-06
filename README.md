@@ -21,7 +21,8 @@ Belongs to **Lewizkuz**. Do not touch if you're not a **certified** Lewiz.
   * Part of student project.
   * Home worpress-jumpstart required to develop.
   * Updating Wordpress filing and outlook. New media content and pagination
- 
+  
+```
  ━━━━╮ This is memedog. Help
 ╰┃ ┣▇━▇ memedog take over
  ┃ ┃  ╰━▅╮ Github by pasting
@@ -33,3 +34,5 @@ Belongs to **Lewizkuz**. Do not touch if you're not a **certified** Lewiz.
 ╲╱▔╲▂▂▂▂╱▔╲▂▂▂╱
  ▏╳▕▇▇▕ ▏╳▕▇▇▕
  ╲▂╱╲▂╱ ╲▂╱╲▂╱
+
+```
