@@ -1,15 +1,17 @@
 import React from 'react';
+import Navbar from './Navbar.js';
 import "../App.css";
 class Header extends React.Component {
     render() {
       return (
         <header>
-            <section class='title_bar'>
-                <h1 class="title_text"> Leevi Kukkonen</h1>
+            <section className='title_bar'>
+                <h1 className="title_text"> Leevi Kukkonen</h1>
             </section>
-            <section class='subtitle_bar'>
-      <h1 class="subtitle_text">{this.props.viewpath}</h1>
+            <section className='subtitle_bar'>
+              <h1 className="subtitle_text">{this.props.viewpath}</h1>
             </section>
+            <Navbar/>
         </header>
       );
     }

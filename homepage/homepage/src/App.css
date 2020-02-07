@@ -13,25 +13,48 @@ header {
   
 }
 nav {
-  display: flex;
+  grid-column: 5;
+  color: white;
 }
-article {
-  
-  color: green;
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+li {
+  display: block;
+  box-sizing: border-box;
+}
+header{
+  grid-column: 1/5;
+  display: grid;
+  grid-template-columns: 30% auto auto;
 }
 .app{
   display: grid;
-  grid-template-columns: auto auto auto;
-  width: 60%;
+  grid-template-columns: auto auto auto auto;
+  width: 70%;
   margin: 3em auto;
 }
-
-header{
-  grid-column: 1/4;
-  display: grid;
-  grid-template-columns: 30% auto; 
-  align-content: center;
-}
 .title_bar {
-  color: brown;
+  color: white;
+}
+.subtitle_bar {
+  grid-column: 2/5;
+}
+.subtitle_bar h1 {
+  color: red;
+  text-align: center;
+}
+article {
+  color: lightgreen;
+  width: 100%;
+  display: flex;
+  justify-self: center;
+  grid-column: 1/5;
+}
+.ArticleHead {
+  width: 20%;
+}
+.ArticleContent {
+  width: 80%;
 }
