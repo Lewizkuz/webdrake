@@ -1,16 +1,18 @@
-* {
+body {
+  background-color: rgb(11, 46, 11);
   margin: 0;
   padding: 0;
-}
-div, header, section {
-  border: 1px solid white;
-}
-body {
-  background-color: darkslateblue;
+  font-family: 'Nunito', sans-serif;
+
 }
 header {
   color: aquamarine;
-  
+  background-color: rgb(194, 140, 78);
+  padding: 2em;
+}
+header h1 {
+  color: aquamarine;
+  font-size: 2em;
 }
 nav {
   grid-column: 5;
@@ -29,12 +31,14 @@ header{
   display: grid;
   grid-template-columns: 30% auto auto;
 }
+/*
 .app{
   display: grid;
   grid-template-columns: auto auto auto auto;
   width: 70%;
   margin: 3em auto;
 }
+*/
 .title_bar {
   color: white;
 }
@@ -47,10 +51,15 @@ header{
 }
 article {
   color: lightgreen;
-  width: 100%;
   display: flex;
   justify-self: center;
   grid-column: 1/5;
+  background-color: rgb(32, 150, 110);
+  padding: 2em;
+}
+article td  {
+   padding: 4%;
+   border: 1px solid lightgreen;
 }
 .ArticleHead {
   width: 20%;
