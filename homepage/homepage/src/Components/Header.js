@@ -6,7 +6,7 @@ class Header extends React.Component {
       return (
         <header>
             <section className='title_bar'>
-                <h1 className="title_text"> Leevi Kukkonen</h1>
+                <h1> Leevi Kukkonen</h1>
             </section>
             <section className='subtitle_bar'>
               <h1 className="subtitle_text">{this.props.viewpath}</h1>
