@@ -1,0 +1,85 @@
+$basefont: 'Nunito', sans-serif;
+
+$basecolor: rgb(37, 23, 75);
+$headercolor: rgb(194, 140, 78);
+$secondarycolor: white;
+
+$fontcolor: lightgreen;
+$headertextcolor: rgb(151, 202, 185);
+
+.app {
+    margin: 0 auto;
+  }
+  body {
+    background-color: $basecolor;
+    margin: 0;
+    padding: 0;
+    font-family: $basefont;
+  }
+  header {
+    color: $headertextcolor;
+    background-color: $headercolor;
+    padding: 2em;
+    h1 {
+        color: $headertextcolor;
+        font-size: 2em;
+      }
+  }
+  nav {
+    grid-column: 5;
+    color: $secondarycolor;
+  }
+  ul {
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    display: block;
+    box-sizing: border-box;
+  }
+  header{
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: 30% auto auto;
+  }
+  /*
+  .app{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 70%;
+    margin: 3em auto;
+  }
+  */
+  .title_bar {
+    color: $secondarycolor;
+  }
+  .subtitle_bar {
+    grid-column: 2/5;
+    h1 {
+        color: red;
+        text-align: center;
+      }
+}
+  article {
+    color: $fontcolor;
+    display: flex;
+    justify-self: center;
+    grid-column: 1/5;
+    background-color: rgb(32, 150, 110);
+    padding: 2em;
+    td  {
+        padding: 4%;
+        border: 1px solid $fontcolor;
+     }
+}
+  .ArticleHead {
+    width: 20%;
+  }
+  .ArticleContent {
+    width: 80%;
+  }
+  @media only screen and (min-width: 1000px) {
+    .app {
+      max-width: 80%;
+    }
+  }

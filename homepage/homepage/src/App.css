@@ -1,36 +1,45 @@
+.app {
+  margin: 0 auto;
+}
+
 body {
-  background-color: rgb(11, 46, 11);
+  background-color: #25174b;
   margin: 0;
   padding: 0;
-  font-family: 'Nunito', sans-serif;
-
+  font-family: "Nunito", sans-serif;
 }
+
 header {
-  color: aquamarine;
-  background-color: rgb(194, 140, 78);
+  color: #97cab9;
+  background-color: #c28c4e;
   padding: 2em;
 }
 header h1 {
-  color: aquamarine;
+  color: #97cab9;
   font-size: 2em;
 }
+
 nav {
   grid-column: 5;
   color: white;
 }
+
 ul {
   display: flex;
   justify-content: space-between;
 }
+
 li {
   display: block;
   box-sizing: border-box;
 }
-header{
+
+header {
   grid-column: 1/5;
   display: grid;
   grid-template-columns: 30% auto auto;
 }
+
 /*
 .app{
   display: grid;
@@ -42,6 +51,7 @@ header{
 .title_bar {
   color: white;
 }
+
 .subtitle_bar {
   grid-column: 2/5;
 }
@@ -49,21 +59,32 @@ header{
   color: red;
   text-align: center;
 }
+
 article {
   color: lightgreen;
   display: flex;
   justify-self: center;
   grid-column: 1/5;
-  background-color: rgb(32, 150, 110);
+  background-color: #20966e;
   padding: 2em;
 }
-article td  {
-   padding: 4%;
-   border: 1px solid lightgreen;
+article td {
+  padding: 4%;
+  border: 1px solid lightgreen;
 }
+
 .ArticleHead {
   width: 20%;
 }
+
 .ArticleContent {
   width: 80%;
 }
+
+@media only screen and (min-width: 1000px) {
+  .app {
+    max-width: 80%;
+  }
+}
+
+/*# sourceMappingURL=App.css.map */
