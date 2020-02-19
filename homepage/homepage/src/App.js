@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header.js';
 import Content from './Components/Content.js';
-import ContentTable from './Components/Content_Table.js';
 
 class App extends React.Component {
   render() {
@@ -26,9 +25,6 @@ class App extends React.Component {
               <Content headtext='Yhteystiedot:'>
                asd,asd,asds,sdssaa
               </Content>
-              <ContentTable headtext='Yhteystiedot:'>
-                asdasd, assda ,asd,as,da,sd,asd, 
-              </ContentTable>
               <Content headtext='Harrastukset'>
                 Kuvataiteen tutkintosarjakuva Theseus(2016) on pisin nykyinen kuvataiteen saavutukseni.
                 Thesus on 30-sivuinen mustavalkoinen sarjakuva, joka on tehty alusta loppuun itse. Piirrustusaikaa annettiin koko vuoden ajaksi.

@@ -1,3 +1,5 @@
+//  Component, that forms a table out of an array of objects
+
 import React from 'react';
 class ContentTable extends React.Component {
     render(){
@@ -7,7 +9,6 @@ class ContentTable extends React.Component {
            arr = arr + '<tr><td>'+childarr[x]+'</td><td>'+childarr[x]+'</td></tr>';    
         }
         arr=arr+'</tbody></table>'
-
         console.log(arr);
         
         return (
