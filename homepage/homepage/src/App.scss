@@ -1,11 +1,13 @@
 $basefont: 'Nunito', sans-serif;
 
-$basecolor: rgb(37, 23, 75);
-$headercolor: rgb(194, 140, 78);
+$basecolor: rgb(208, 205, 218);
+$headercolor: rgb(153, 194, 78);
 $secondarycolor: white;
+$accentcolor: rgb(161, 211, 146);
 
 $fontcolor: lightgreen;
-$headertextcolor: rgb(151, 202, 185);
+$headertextcolor: rgb(217, 231, 191);
+$articleheadfontcolor: rgb(14, 14, 19);
 
 .app {
     margin: 0 auto;
@@ -66,7 +68,6 @@ $headertextcolor: rgb(151, 202, 185);
     justify-self: center;
     grid-column: 1/5;
     background-color: rgb(32, 150, 110);
-    padding: 2em;
     td  {
         padding: 4%;
         border: 1px solid $fontcolor;
@@ -74,6 +75,13 @@ $headertextcolor: rgb(151, 202, 185);
 }
   .ArticleHead {
     width: 20%;
+    background-color: $accentcolor;
+    color: $articleheadfontcolor;
+    h1 {
+      padding: 1em;
+      text-align: right;
+
+    }
   }
   .ArticleContent {
     width: 80%;

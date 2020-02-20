@@ -3,19 +3,19 @@
 }
 
 body {
-  background-color: #25174b;
+  background-color: #d0cdda;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
 }
 
 header {
-  color: #97cab9;
-  background-color: #c28c4e;
+  color: #d9e7bf;
+  background-color: #99c24e;
   padding: 2em;
 }
 header h1 {
-  color: #97cab9;
+  color: #d9e7bf;
   font-size: 2em;
 }
 
@@ -66,7 +66,6 @@ article {
   justify-self: center;
   grid-column: 1/5;
   background-color: #20966e;
-  padding: 2em;
 }
 article td {
   padding: 4%;
@@ -75,6 +74,12 @@ article td {
 
 .ArticleHead {
   width: 20%;
+  background-color: #a1d392;
+  color: #0e0e13;
+}
+.ArticleHead h1 {
+  padding: 1em;
+  text-align: right;
 }
 
 .ArticleContent {
