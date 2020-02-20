@@ -1,23 +1,19 @@
 import React from 'react';
 import Navbar from './Navbar.js';
 import "../App.css";
-class Header extends React.Component {
-    render() {
+export default function Header(props) {
       return (
         <header>
             <section className='title_bar'>
                 <h1> Leevi Kukkonen</h1>
             </section>
             <section className='subtitle_bar'>
-              <h1 className="subtitle_text">{this.props.viewpath}</h1>
+              <h1 className="subtitle_text">{props.viewpath}</h1>
             </section>
             <Navbar/>
         </header>
       );
-    }
-  }
-  
-export default Header;
+}
   /*
 import React from 'react';
 import './App.css';

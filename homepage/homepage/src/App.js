@@ -4,8 +4,7 @@ import './App.css';
 import Header from './Components/Header.js';
 import Content from './Components/Content.js';
 
-class App extends React.Component {
-  render() {
+export default function App() {
     return (
       <Router >
         <div className="app">
@@ -43,6 +42,3 @@ class App extends React.Component {
       </Router>
     );
   }
-}
-
-export default App;
