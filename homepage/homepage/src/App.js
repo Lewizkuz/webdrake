@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './App.css';
 import Header from './Components/Header.js';
 import Content from './Components/Content.js';
+import Footer from './Components/Footer';
 
 export default function App() {
     return (
@@ -36,6 +37,7 @@ export default function App() {
                   Käynyt varusmiespalveluksen hyväksytysti Kainuun Prikaatissa Kranaatinheitinkomppaniassa. Reservisotilasarvo korpraali
                   Suoritettuna ovat myos Hygienia- ja Anniskelupassi., sekä kuvataiteen peruskoulutus.
               </Content>
+              <Footer></Footer>
             </Route>
           </Switch>
         </div>
