@@ -1,3 +1,4 @@
+$a-tags: 'a, a:active, a:hover, a:visited';
 $basefont: 'Nunito', sans-serif;
 
 $basecolor: rgb(208, 205, 218);
@@ -9,85 +10,153 @@ $fontcolor: lightgreen;
 $headertextcolor: rgb(217, 231, 191);
 $articleheadfontcolor: rgb(14, 14, 19);
 
+*{
+  padding: 0;
+  margin: 0;
+}
 .app {
-    margin: 0 auto;
-  }
-  body {
-    background-color: $basecolor;
-    margin: 0;
-    padding: 0;
-    font-family: $basefont;
-  }
-  header {
+  margin: 0 auto;
+}
+body {
+  background-color: $basecolor;
+  margin: 0;
+  padding: 0;
+  font-family: $basefont;
+}
+header {
+  color: $headertextcolor;
+  background-color: $headercolor;
+  padding: 1em;
+  h1 {
     color: $headertextcolor;
-    background-color: $headercolor;
-    padding: 2em;
-    h1 {
-        color: $headertextcolor;
-        font-size: 2em;
-      }
+    font-size: 2em;
+    text-align: center;
   }
-  nav {
-    grid-column: 5;
-    color: $secondarycolor;
-  }
-  ul {
-    display: flex;
-    justify-content: space-between;
-  }
-  li {
-    display: block;
-    box-sizing: border-box;
-  }
-  header{
-    grid-column: 1/5;
-    display: grid;
-    grid-template-columns: 30% auto auto;
-  }
-  /*
+}
+nav {
+  color: $secondarycolor;
+}
+ul {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto;
+}
+li {
+  display: block;
+}
+.NavLink {
+  padding: .5em;
+  color: $headertextcolor;
+  text-align: center;
+}
+#{$a-tags} {
+  text-decoration: none;
+}
+a .NavLink:hover{
+  background-color: $accentcolor;
+}
+header{
+  display: grid;
+}
+/*
   .app{
     display: grid;
     grid-template-columns: auto auto auto auto;
     width: 70%;
     margin: 3em auto;
   }
-  */
+*/
+.title_bar {
+  color: $secondarycolor;
+}
+.subtitle_bar {
+  h1 {
+    color: $headertextcolor;
+    text-align: center;
+  }
+}
+
+article {
+  color: $fontcolor;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+  background-color: rgb(32, 150, 110);
+  td  {
+    padding: 4%;
+    border: 1px solid $fontcolor;
+  }
+}
+.ArticleHead {
+  width: 100%;
+  background-color: $accentcolor;
+  color: $articleheadfontcolor;
+  h1 {
+    padding: 1em;
+    text-align: center;
+  }
+}
+.ArticleContent {
+  width: 100%;
+  p {
+    padding: 1em;
+  }
+}
+footer {
+  background-color: $headercolor;
+  color: $headertextcolor;
+  p {
+    padding: 1em;
+    text-align: center;
+  }
+}
+
+//  tablet
+@media only screen and (min-width: 700px) {
+  .app {
+    max-width: 100%;
+  }
+  nav {
+    grid-column: 3;
+  }
+  ul {
+    grid-template-columns:  auto auto auto auto auto;
+  }
+  header{
+    grid-column: 1/5;
+    grid-template-columns: 20% 20% auto;
+  }
   .title_bar {
-    color: $secondarycolor;
+    h1 {
+      text-align: left;
+    }
   }
   .subtitle_bar {
-    grid-column: 2/5;
-    h1 {
-        color: red;
-        text-align: center;
-      }
-}
+    grid-column: 2/3;
+  }
   article {
-    color: $fontcolor;
-    display: flex;
-    justify-self: center;
     grid-column: 1/5;
-    background-color: rgb(32, 150, 110);
-    td  {
-        padding: 4%;
-        border: 1px solid $fontcolor;
-     }
-}
+  }
   .ArticleHead {
-    width: 20%;
-    background-color: $accentcolor;
-    color: $articleheadfontcolor;
+    width: 30%;
     h1 {
       padding: 1em;
       text-align: right;
-
     }
+  }
+  .ArticleContent {
+    width: 70%;
+  }
+}
+//  desktop
+@media only screen and (min-width: 1000px) {
+  .app {
+    max-width: 80%;
+  }
+  .ArticleHead {
+    width: 20%;
   }
   .ArticleContent {
     width: 80%;
   }
-  @media only screen and (min-width: 1000px) {
-    .app {
-      max-width: 80%;
-    }
-  }
+}
