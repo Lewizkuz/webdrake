@@ -1,10 +1,11 @@
 $a-tags: 'a, a:active, a:hover, a:visited';
 $basefont: 'Nunito', sans-serif;
 
-$basecolor: rgb(208, 205, 218);
+$basecolor: rgb(192, 214, 192);
 $headercolor: rgb(153, 194, 78);
 $secondarycolor: white;
 $accentcolor: rgb(161, 211, 146);
+$activecolor: rgb(38, 94, 27);
 
 $fontcolor: lightgreen;
 $headertextcolor: rgb(217, 231, 191);
@@ -26,12 +27,6 @@ body {
 header {
   color: $headertextcolor;
   background-color: $headercolor;
-  padding: 1em;
-  h1 {
-    color: $headertextcolor;
-    font-size: 2em;
-    text-align: center;
-  }
 }
 nav {
   color: $secondarycolor;
@@ -44,6 +39,10 @@ ul {
 li {
   display: block;
 }
+.Desktop {
+  display: none;
+}
+
 .NavLink {
   padding: .5em;
   color: $headertextcolor;
@@ -52,8 +51,10 @@ li {
 #{$a-tags} {
   text-decoration: none;
 }
-a .NavLink:hover{
-  background-color: $accentcolor;
+a {
+  .NavLink:hover{
+    background-color: $accentcolor;
+  }
 }
 header{
   display: grid;
@@ -68,6 +69,12 @@ header{
 */
 .title_bar {
   color: $secondarycolor;
+  h1 {
+    color: $headertextcolor;
+    font-size: 2em;
+    text-align: center;
+
+  }
 }
 .subtitle_bar {
   h1 {
@@ -110,7 +117,9 @@ footer {
     text-align: center;
   }
 }
-
+.Active{
+  background-color: $activecolor;
+}
 //  tablet
 @media only screen and (min-width: 700px) {
   .app {
@@ -126,13 +135,11 @@ footer {
     grid-column: 1/5;
     grid-template-columns: 20% 20% auto;
   }
-  .title_bar {
-    h1 {
-      text-align: left;
-    }
-  }
   .subtitle_bar {
     grid-column: 2/3;
+    h1 {
+      padding-top: .25em;
+    }
   }
   article {
     grid-column: 1/5;
@@ -149,7 +156,7 @@ footer {
   }
 }
 //  desktop
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1500px) {
   .app {
     max-width: 80%;
   }

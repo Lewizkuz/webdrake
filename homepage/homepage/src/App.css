@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: #d0cdda;
+  background-color: #c0d6c0;
   margin: 0;
   padding: 0;
   font-family: "Nunito", sans-serif;
@@ -17,12 +17,6 @@ body {
 header {
   color: #d9e7bf;
   background-color: #99c24e;
-  padding: 1em;
-}
-header h1 {
-  color: #d9e7bf;
-  font-size: 2em;
-  text-align: center;
 }
 
 nav {
@@ -37,6 +31,10 @@ ul {
 
 li {
   display: block;
+}
+
+.Desktop {
+  display: none;
 }
 
 .NavLink {
@@ -67,6 +65,11 @@ header {
 */
 .title_bar {
   color: white;
+}
+.title_bar h1 {
+  color: #d9e7bf;
+  font-size: 2em;
+  text-align: center;
 }
 
 .subtitle_bar h1 {
@@ -112,6 +115,10 @@ footer p {
   text-align: center;
 }
 
+.Active {
+  background-color: #265e1b;
+}
+
 @media only screen and (min-width: 700px) {
   .app {
     max-width: 100%;
@@ -130,12 +137,11 @@ footer p {
     grid-template-columns: 20% 20% auto;
   }
 
-  .title_bar h1 {
-    text-align: left;
-  }
-
   .subtitle_bar {
     grid-column: 2/3;
+  }
+  .subtitle_bar h1 {
+    padding-top: 0.25em;
   }
 
   article {
@@ -154,7 +160,7 @@ footer p {
     width: 70%;
   }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1500px) {
   .app {
     max-width: 80%;
   }
