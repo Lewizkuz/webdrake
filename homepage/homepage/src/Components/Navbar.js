@@ -1,5 +1,37 @@
 import React from 'react';
-function navlink (link, text) {
+export default function NavBar() {
+        return (
+          <nav>
+            <ul className='Desktop'>
+                {NavLink('/', 'Home')}
+                {NavLink('/about', 'About')}
+                {NavLink('/portfolio', 'Portfolio')}
+                {NavLink('/stuff', 'Stuff')}
+                {NavLink('/art', 'Art')}
+            </ul>
+            <button></button>
+            <ul className='Hamburger'>
+            {NavLink('/', 'Home')}
+            {NavLink('/about', 'About')}
+            {NavLink('/portfolio', 'Portfolio')}
+            {NavLink('/stuff', 'Stuff')}
+            {NavLink('/art', 'Art')}
+          </ul>
+          </nav>
+        );
+}
+function NavLink (link, text) {
+  if(window.location.pathname === link){
+    return (
+      <li>
+        <a href={link}>
+          <div className='NavLink Active'>
+            <h2>{text}</h2>
+          </div>
+        </a>
+      </li>
+    );
+  }
   return (
     <li>
       <a href={link}>
@@ -9,17 +41,4 @@ function navlink (link, text) {
       </a>
     </li>
   );
-}
-export default function NavBar() {
-        return (
-          <nav>
-            <ul>
-                {navlink('/', 'Home')}
-                {navlink('/about', 'About')}
-                {navlink('/portfolio', 'Portfolio')}
-                {navlink('/stuff', 'Stuff')}
-                {navlink('/art', 'Art')}
-            </ul>
-          </nav>
-        );
 }
