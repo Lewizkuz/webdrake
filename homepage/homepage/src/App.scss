@@ -11,6 +11,9 @@ $fontcolor: lightgreen;
 $headertextcolor: rgb(217, 231, 191);
 $articleheadfontcolor: rgb(14, 14, 19);
 
+$haircolor: #002163;
+$skincolor: #b1ab4e;
+
 *{
   padding: 0;
   margin: 0;
@@ -167,3 +170,119 @@ footer {
     width: 80%;
   }
 }
+@keyframes blink {
+  0% {
+    height:100%;
+  }
+  50% {
+    height: 0%;
+  }
+  100% {
+    height:100%;
+  }
+}
+
+svg {
+  margin: auto;
+}
+         #backhair {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:4.42592669;
+           stroke-linejoin:round;
+           stroke-miterlimit:4;
+           stroke-dasharray:none;
+           stroke-opacity:0
+         }
+         #face{
+           fill:$skincolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:5.22699976;
+           stroke-linejoin:round;
+           stroke-miterlimit:4;
+           stroke-dasharray:none;
+           stroke-opacity:0;
+         }
+         #eyeright
+         {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+          stroke-width:4.75889492;
+          stroke-linejoin:round;
+          stroke-miterlimit:4;
+          stroke-dasharray:none;
+          stroke-opacity:0;
+          animation-name: blink;
+          animation-duration: 5s;
+        }
+         #eyeleft {
+           display:inline;
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:4.75889492;
+           stroke-linejoin:round;
+           stroke-miterlimit:4;
+           stroke-dasharray:none;
+           stroke-opacity:0;
+          animation-name: blink;
+          animation-duration: 5s;
+        }
+         #mouth {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:0.2242776px;
+           stroke-linecap:butt;
+           stroke-linejoin:miter;
+           stroke-opacity:1;
+           transition: width 2s ease-in-out;
+        }
+          #leftbothair { 
+            fill:$haircolor;
+            fill-opacity:1;
+            stroke:none;
+            stroke-width:0.26458332px;
+            stroke-linecap:butt;
+            stroke-linejoin:miter;
+            stroke-opacity:1;
+         }
+        #middlebothair {
+          fill:$haircolor;
+          fill-opacity:1;
+          stroke:none;
+          stroke-width:0.26458332px;
+          stroke-linecap:butt;
+          stroke-linejoin:miter;
+          stroke-opacity:1;
+         }
+         #middlelefthair {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:0.26458332px;
+           stroke-linecap:butt;
+           stroke-linejoin:miter;stroke-opacity:1;
+          }
+         
+         #middlehair {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:0.26458332px;
+           stroke-linecap:butt;
+           stroke-linejoin:miter;
+           stroke-opacity:1;
+          }
+         #tophair {
+           fill:$haircolor;
+           fill-opacity:1;
+           stroke:none;
+           stroke-width:0.27467895px;
+           stroke-linecap:butt;
+           stroke-linejoin:miter;
+           stroke-opacity:1;
+          }

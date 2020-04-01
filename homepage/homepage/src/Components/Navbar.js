@@ -9,7 +9,6 @@ export default function NavBar() {
                 {NavLink('/stuff', 'Stuff')}
                 {NavLink('/art', 'Art')}
             </ul>
-            <button></button>
             <ul className='Hamburger'>
             {NavLink('/', 'Home')}
             {NavLink('/about', 'About')}
