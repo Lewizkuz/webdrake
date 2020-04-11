@@ -17,10 +17,15 @@ body {
 header {
   color: #d9e7bf;
   background-color: #99c24e;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 nav {
+  background-color: #99c24e;
   color: white;
+  width: 100%;
 }
 
 ul {
@@ -51,8 +56,12 @@ a .NavLink:hover {
   background-color: #a1d392;
 }
 
-header {
-  display: grid;
+footer {
+  display: flex;
+  align-items: center;
+}
+footer section {
+  width: 50%;
 }
 
 /*
@@ -72,6 +81,9 @@ header {
   text-align: center;
 }
 
+.subtitle_bar {
+  align-items: center;
+}
 .subtitle_bar h1 {
   color: #d9e7bf;
   text-align: center;
@@ -125,7 +137,8 @@ footer p {
   }
 
   nav {
-    grid-column: 3;
+    flex-direction: row;
+    width: 100%;
   }
 
   ul {
@@ -133,23 +146,15 @@ footer p {
   }
 
   header {
-    grid-column: 1/5;
-    grid-template-columns: 20% 20% auto;
+    flex-direction: row;
   }
 
-  .subtitle_bar {
-    grid-column: 2/3;
-  }
-  .subtitle_bar h1 {
-    padding-top: 0.25em;
-  }
-
-  article {
-    grid-column: 1/5;
+  .title_bar {
+    width: 45%;
   }
 
   .ArticleHead {
-    width: 30%;
+    width: 35%;
   }
   .ArticleHead h1 {
     padding: 1em;
@@ -157,7 +162,7 @@ footer p {
   }
 
   .ArticleContent {
-    width: 70%;
+    width: 65%;
   }
 }
 @media only screen and (min-width: 1500px) {
@@ -172,130 +177,6 @@ footer p {
   .ArticleContent {
     width: 80%;
   }
-}
-@keyframes blink {
-  0% {
-    height: 100%;
-  }
-  50% {
-    height: 0%;
-  }
-  100% {
-    height: 100%;
-  }
-}
-svg {
-  margin: auto;
-}
-
-#backhair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 4.42592669;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0;
-}
-
-#face {
-  fill: #b1ab4e;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 5.22699976;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0;
-}
-
-#eyeright {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 4.75889492;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0;
-  animation-name: blink;
-  animation-duration: 5s;
-}
-
-#eyeleft {
-  display: inline;
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 4.75889492;
-  stroke-linejoin: round;
-  stroke-miterlimit: 4;
-  stroke-dasharray: none;
-  stroke-opacity: 0;
-  animation-name: blink;
-  animation-duration: 5s;
-}
-
-#mouth {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.2242776px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-  transition: width 2s ease-in-out;
-}
-
-#leftbothair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.26458332px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-}
-
-#middlebothair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.26458332px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-}
-
-#middlelefthair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.26458332px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-}
-
-#middlehair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.26458332px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
-}
-
-#tophair {
-  fill: #002163;
-  fill-opacity: 1;
-  stroke: none;
-  stroke-width: 0.27467895px;
-  stroke-linecap: butt;
-  stroke-linejoin: miter;
-  stroke-opacity: 1;
 }
 
 /*# sourceMappingURL=App.css.map */
