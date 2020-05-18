@@ -5,7 +5,7 @@ import "./App.css";
 
 function App() {
 	return (
-		<Container className="App">
+		<Container accent className="App">
 			<Typography>Hello world</Typography>{" "}
 			<Tabs>
 				<Tab label="Item One" />
