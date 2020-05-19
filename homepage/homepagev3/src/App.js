@@ -1,9 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { Container, Typography, Tabs, Tab } from "@material-ui/core/";
+import {
+	Container,
+	Typography,
+	Tabs,
+	Tab,
+	withStyles,
+	createStyles,
+} from "@material-ui/core/";
 import "./App.css";
 
-function App() {
+const theme = createStyles({
+	root: {
+		display: "flex",
+	},
+});
+
+const App = () => {
 	return (
 		<Container accent className="App">
 			<Typography>Hello world</Typography>{" "}
@@ -14,6 +26,6 @@ function App() {
 			</Tabs>
 		</Container>
 	);
-}
+};
 
-export default App;
+export default withStyles(App);
