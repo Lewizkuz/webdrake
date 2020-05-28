@@ -31,7 +31,8 @@ export default function Navbar(props) {
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
-	const x = props.tabheads;
+	const navheads = props.tabheads;
+	const panels = props.tabpanels;
 	return (
 		<>
 			<Tabs
@@ -42,31 +43,30 @@ export default function Navbar(props) {
 				onChange={handleChange}
 				centered
 			>
-				{x ? (
-					x.map((element) => {
+				{navheads ? (
+					navheads.map((element, index) => {
 						//	console.log(element, x);
-						return <Tab label={element}></Tab>;
+						return <Tab label={element} index={index} key={index}></Tab>;
 					})
 				) : (
-					<>
-						<Tab label="Please define tabheads= "></Tab>
-						<Tab label="['first','second','third']"></Tab>
-					</>
+					<Tab label="Please define tabheads= "></Tab>
 				)}
 			</Tabs>
-			<TabPanel value={value} index={0}>
-				Item One
-			</TabPanel>
-			<TabPanel value={value} index={1}>
-				Item Two
-			</TabPanel>
-			<TabPanel value={value} index={2}>
-				Item Three
-			</TabPanel>
+			{panels
+				? panels.map((element, index) => {
+						//console.log(element, index);
+						return (
+							<TabPanel value={element} key={index} index={index}>
+								<p>>element</p>
+							</TabPanel>
+						);
+				  })
+				: null}
 		</>
 	);
 }
 Navbar.propTypes = {
 	class: PropTypes.node,
 	tabheads: PropTypes.any.isRequired,
+	tabpanels: PropTypes.any.isRequired,
 };

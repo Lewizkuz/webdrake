@@ -29,7 +29,10 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.status.danger,
 	},
 }));
-const tabs = ["About", "Introduction", "Examples"];
+const tabs = {
+	heads: ["About", "Introduction", "Examples"],
+	panels: ["i sniff ", "i am me", "i did things"],
+};
 const App = () => {
 	const classes = useStyles();
 	return (
@@ -37,7 +40,12 @@ const App = () => {
 			<Typography className={classes.root} align="center" variant="h1">
 				Hello world
 			</Typography>
-			<NavBar class={classes.navbar} tabheads={tabs} startindex={1}></NavBar>
+			<NavBar
+				class={classes.navbar}
+				tabheads={tabs.heads}
+				tabpanels={tabs.panels}
+				startindex={1}
+			></NavBar>
 		</Container>
 	);
 };
