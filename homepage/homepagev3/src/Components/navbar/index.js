@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Tabs, Tab, Typography, Box } from "@material-ui/core";
+import { Tabs, Tab, Box } from "@material-ui/core";
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;
 
@@ -12,11 +12,7 @@ function TabPanel(props) {
 			aria-labelledby={`simple-tab-${index}`}
 			{...other}
 		>
-			{value === index && (
-				<Box p={3}>
-					<Typography>{children}</Typography>
-				</Box>
-			)}
+			{value === index && <Box p={3}>{children}</Box>}
 		</div>
 	);
 }
@@ -33,6 +29,7 @@ export default function Navbar(props) {
 	};
 	const navheads = props.tabheads;
 	const panels = props.tabpanels;
+	//	console.log(navheads, panels);
 	return (
 		<>
 			<Tabs
@@ -45,8 +42,8 @@ export default function Navbar(props) {
 			>
 				{navheads ? (
 					navheads.map((element, index) => {
-						//	console.log(element, x);
-						return <Tab label={element} index={index} key={index}></Tab>;
+						//		console.log(element, index);
+						return <Tab label={element} key={index}></Tab>;
 					})
 				) : (
 					<Tab label="Please define tabheads= "></Tab>
@@ -56,8 +53,8 @@ export default function Navbar(props) {
 				? panels.map((element, index) => {
 						//console.log(element, index);
 						return (
-							<TabPanel value={element} key={index} index={index}>
-								<p>>element</p>
+							<TabPanel value={value} key={index} index={index}>
+								{element}
 							</TabPanel>
 						);
 				  })
