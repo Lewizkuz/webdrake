@@ -1,31 +1,31 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
+import GridPage from "../../Components/GridPage";
 
 export default function Intro(props) {
-	const obj = [
-		{ content: <Typography>ok</Typography>, mid: 4, sm: 6 },
-		{ content: <Typography>nice</Typography>, mid: 4, sm: 6 },
-		{ content: <Typography>nice</Typography>, mid: 4, sm: 6 },
-		{ content: <Typography>sweet</Typography>, mid: 12 },
-		{ content: <Typography>it works</Typography> },
-	];
-	const printGrid = (objects) =>
-		objects.map((ele) => (
-			<Grid
-				item
-				xs={12}
-				sm={ele.sm ? ele.sm : null}
-				md={ele.mid ? ele.mid : null}
-			>
-				{ele.content}
-			</Grid>
-		));
+  const tabs = [
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+    { xs: 12, md: 6, lg: 4 },
+  ];
+  const obj = ["ok", "nice", "nice", "sweet", "it", "works"];
+  const printGrid = (objects) => {
+    return objects.map((ele, i) => (
+      <Typography align="center" key={i}>
+        {ele}
+      </Typography>
+    ));
+  };
 
-	return <Grid container>{printGrid(obj)}</Grid>;
+  return <GridPage tabs={tabs}>{printGrid(obj)}</GridPage>;
 }
 Intro.propTypes = {
-	class: PropTypes.node,
-	//	tabheads: PropTypes.any.isRequired,
-	//	tabpanels: PropTypes.any.isRequired,
+  class: PropTypes.node,
+  //	tabheads: PropTypes.any.isRequired,
+  //	tabpanels: PropTypes.any.isRequired,
 };
