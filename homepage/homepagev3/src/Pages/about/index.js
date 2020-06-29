@@ -1,12 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Grid, Typography } from "@material-ui/core";
+import { Typography } from "@material-ui/core";
 import GridPage from "../../Components/GridPage";
 
 export default function About(props) {
   return (
-    <GridPage tabs={[{ xs: 12 }]}>
-      <Typography>Hello</Typography>
+    <GridPage rows={[{ xs: 12 }, { xs: 12 }, { xs: 12 }, { xs: 12 }]}>
+      <Typography align="center">Hello</Typography>
+      <Typography align="center">Hello</Typography>
+      <Typography align="center">Hello</Typography>
+      <Typography align="center">Hello</Typography>
     </GridPage>
   );
 }

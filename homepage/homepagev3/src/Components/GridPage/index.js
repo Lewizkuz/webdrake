@@ -3,19 +3,22 @@ import PropTypes from "prop-types";
 import { Grid } from "@material-ui/core";
 
 export default function GridPage(props) {
-  const { children, tabs } = props;
-  console.log(children);
+  const { children, rows } = props;
   return (
     <Grid container>
-      {children
-        ? children.length
-          ? children.map((e, i) => (
-              <Grid item key={i} {...tabs[i]}>
-                {e}
-              </Grid>
-            ))
-          : children
-        : null}
+      {children ? (
+        typeof children !== "string" && children.length > 1 ? (
+          children.map((e, i) => (
+            <Grid item key={i} {...rows[i]}>
+              {e}
+            </Grid>
+          ))
+        ) : (
+          <Grid item key={0} xs={12}>
+            {children}
+          </Grid>
+        )
+      ) : null}
     </Grid>
   );
 }

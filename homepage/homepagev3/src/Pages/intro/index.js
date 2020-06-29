@@ -22,7 +22,7 @@ export default function Intro(props) {
     ));
   };
 
-  return <GridPage tabs={tabs}>{printGrid(obj)}</GridPage>;
+  return <GridPage rows={tabs}>{printGrid(obj)}</GridPage>;
 }
 Intro.propTypes = {
   class: PropTypes.node,
