@@ -16,7 +16,7 @@ Belongs to **Lewizkuz**. Do not touch if you're not a **certified** Lewiz.
 ## Projects in wait:
 * Homepage-development
   * versions and updates
-  * current website (version 1.0) found [HERE (https://student.labranet.jamk.fi/~K8397/web_tekniikat/Harjoitustyo/projectfile/harjoitustyo.html)](https://student.labranet.jamk.fi/~K8397/web_tekniikat/Harjoitustyo/projectfile/harjoitustyo.html)
+  * current website (version 0.1) found [HERE (https://student.labranet.jamk.fi/~K8397/web_tekniikat/Harjoitustyo/projectfile/harjoitustyo.html)](https://student.labranet.jamk.fi/~K8397/web_tekniikat/Harjoitustyo/projectfile/harjoitustyo.html)
 * KESS-page-development
   * Part of student project.
   * Home worpress-jumpstart required to develop.
