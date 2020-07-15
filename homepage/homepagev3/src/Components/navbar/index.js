@@ -27,9 +27,8 @@ export default function Navbar(props) {
 	const handleChange = (event, newValue) => {
 		setValue(newValue);
 	};
-	const navheads = props.tabheads;
-	const panels = props.tabpanels;
-	//	console.log(navheads, panels);
+	const { tabheads, tabpanels } = props;
+	//	console.log(tabheads, tabpanels);
 	return (
 		<>
 			<Tabs
@@ -40,8 +39,8 @@ export default function Navbar(props) {
 				onChange={handleChange}
 				centered
 			>
-				{navheads ? (
-					navheads.map((element, index) => {
+				{tabheads ? (
+					tabheads.map((element, index) => {
 						//		console.log(element, index);
 						return <Tab label={element} key={index}></Tab>;
 					})
@@ -49,8 +48,8 @@ export default function Navbar(props) {
 					<Tab label="Please define tabheads= "></Tab>
 				)}
 			</Tabs>
-			{panels
-				? panels.map((element, index) => {
+			{tabpanels
+				? tabpanels.map((element, index) => {
 						//console.log(element, index);
 						return (
 							<TabPanel value={value} key={index} index={index}>
