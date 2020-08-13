@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Typography } from "@material-ui/core";
+import { Typography, Box } from "@material-ui/core";
 import GridPage from "../../Components/GridPage";
 
 export default function Intro(props) {
@@ -22,7 +22,11 @@ export default function Intro(props) {
     ));
   };
 
-  return <GridPage rows={tabs}>{printGrid(obj)}</GridPage>;
+  return (
+    <Box margin="auto" width={[1, 1, 1, 3 / 4, 1 / 2]}>
+      <GridPage rows={tabs}>{printGrid(obj)}</GridPage>
+    </Box>
+  );
 }
 Intro.propTypes = {
   class: PropTypes.node,

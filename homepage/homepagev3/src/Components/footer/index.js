@@ -1,27 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Typography, AppBar } from "@material-ui/core";
-import GridPage from "../../Components/GridPage";
+
+import { AppBar, Typography, Box } from "@material-ui/core";
 
 export default function Footer(props) {
-	const { title, subhead, classes } = props;
-	return (
-		<AppBar position="relative">
-			{title ? (
-				<Typography className={classes.head} align="center" variant="h1">
-					{title}
-				</Typography>
-			) : null}
-			{subhead ? (
-				<Typography className={classes.subhead} align="center" variant="h5">
-					{subhead}
-				</Typography>
-			) : null}
-		</AppBar>
-	);
+  const { footnote, classes } = props;
+  return (
+    <AppBar position="relative">
+      <Box display="flex" justifyContent="justify" alignContent="justify">
+        {footnote ? (
+          <Typography className={classes.footnote} align="center" variant="h5">
+            {footnote}
+          </Typography>
+        ) : null}
+        <Typography className={classes.footnote} align="center" variant="h5">
+          {new Date().toLocaleDateString()}
+        </Typography>
+      </Box>
+    </AppBar>
+  );
 }
-Footer.propTypes = {
-	class: PropTypes.node,
-	//	tabheads: PropTypes.any.isRequired,
-	//	tabpanels: PropTypes.any.isRequired,
-};
