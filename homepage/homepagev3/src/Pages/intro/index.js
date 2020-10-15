@@ -1,35 +1,16 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Typography, Box } from "@material-ui/core";
+import {Box} from "@material-ui/core";
+import TextBox from "../../Components/TextBox";
 import GridPage from "../../Components/GridPage";
-
-export default function Intro(props) {
-  const tabs = [
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-    { xs: 12, md: 6, lg: 4 },
-  ];
-  const obj = ["ok", "nice", "nice", "sweet", "it", "works"];
-  const printGrid = (objects) => {
-    return objects.map((ele, i) => (
-      <Typography align="center" key={i}>
-        {ele}
-      </Typography>
-    ));
-  };
-
+export default () => {
+  const row = ["ok", "nice", "sweet", "it", "works", "finally"];
   return (
     <Box margin="auto" width={[1, 1, 1, 3 / 4, 1 / 2]}>
-      <GridPage rows={tabs}>{printGrid(obj)}</GridPage>
+      <GridPage spacing={2} rows={row.map(() => ({xs: 12, sm: 4}))}>
+        {row.map((e, i) => (
+          <TextBox key={i}>{e}</TextBox>
+        ))}
+      </GridPage>
     </Box>
   );
-}
-Intro.propTypes = {
-  class: PropTypes.node,
-  //	tabheads: PropTypes.any.isRequired,
-  //	tabpanels: PropTypes.any.isRequired,
 };

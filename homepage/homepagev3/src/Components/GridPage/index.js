@@ -1,15 +1,21 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Grid } from "@material-ui/core";
-
-export default function GridPage(props) {
-  const { children, rows, ...other } = props;
+import {Grid, makeStyles} from "@material-ui/core";
+const useStyles = makeStyles({
+  container: {textAlign: "center", margin: "auto"},
+});
+export default ({children, rows, nocenter, ...other}) => {
+  const classes = useStyles();
   return (
     <Grid container {...other}>
       {children ? (
         typeof children !== "string" && children.length > 1 ? (
           children.map((e, i) => (
-            <Grid item key={i} {...rows[i]}>
+            <Grid
+              item
+              key={i}
+              {...rows[i]}
+              className={nocenter && classes.container}
+            >
               {e}
             </Grid>
           ))
@@ -21,9 +27,4 @@ export default function GridPage(props) {
       ) : null}
     </Grid>
   );
-}
-GridPage.propTypes = {
-  children: PropTypes.node,
-  //	tabheads: PropTypes.any.isRequired,
-  //	tabpanels: PropTypes.any.isRequired,
 };
