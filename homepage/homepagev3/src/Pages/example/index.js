@@ -1,23 +1,20 @@
 import React from "react";
-import {Typography, Box, Paper} from "@material-ui/core";
+import { Box} from "@material-ui/core";
 import GridPage from "../../Components/GridPage";
-
+import ImageCard from "../../Components/ImageCard";
+import Logo from "../../logo512.png"
 export default () => {
   return (
     <Box margin="auto" width={[1, 1, 1, 3 / 4, 1 / 2]}>
       <GridPage
-        rows={[{xs: 12, sm: 6}, {xs: 12, sm: 6}, {xs: 12}, {xs: 12}]}
+        rows={[{xs: 12, sm: 6, md: 4},{xs: 12, sm: 6, md: 4},{xs: 12, sm: 6, md: 4},{xs: 12, sm: 6, md: 4}, {xs: 12, sm: 6, md: 4},{xs: 12, sm: 6, md: 4},]}
         spacing={2}
       >
-        <Paper elevation={0}>
-          <Typography align="center">Bislenz</Typography>
-        </Paper>
-        <Paper elevation={0}>
-          <Typography align="center">Bislenz</Typography>
-        </Paper>
-        <Paper elevation={0}>
-          <Typography align="center">Hello</Typography>
-        </Paper>
+        <ImageCard image={Logo}>asd</ImageCard>
+        <ImageCard  image={Logo}>asd</ImageCard>
+        <ImageCard  image={Logo}>asd</ImageCard>
+        <ImageCard  image={Logo}>asd</ImageCard>
+        <ImageCard  image={Logo}>asd</ImageCard>
       </GridPage>
     </Box>
   );

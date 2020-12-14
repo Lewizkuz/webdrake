@@ -1,10 +1,21 @@
 import React from "react";
-import {Typography, Paper} from "@material-ui/core";
-export default ({children, ...other}) =>
-  children && (
-    <Paper elevation={0}>
-      <Typography align="center" {...other}>
-        {children}
-      </Typography>
-    </Paper>
-  );
+import { Paper, 
+  makeStyles,
+  } from "@material-ui/core";
+const useStyles = makeStyles((theme) => ({
+  head: {
+    color: theme.palette.text_primary,
+  },
+  subhead: {
+    color: theme.palette.primary.sub,
+  },
+  card:{
+      boxShadow: theme.shadows[0],
+      padding: theme.spacing(1),
+  },
+}));
+const ImageCard = ({children, ...other}) => {
+  const classes = useStyles();
+return <Paper className={classes.card}  {...other}>{children}</Paper>
+};
+export default ImageCard;
