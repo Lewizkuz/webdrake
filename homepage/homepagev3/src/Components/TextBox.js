@@ -1,7 +1,5 @@
 import React from "react";
-import { Paper, 
-  makeStyles,
-  } from "@material-ui/core";
+import {Paper, makeStyles} from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   head: {
     color: theme.palette.text_primary,
@@ -9,13 +7,17 @@ const useStyles = makeStyles((theme) => ({
   subhead: {
     color: theme.palette.primary.sub,
   },
-  card:{
-      boxShadow: theme.shadows[0],
-      padding: theme.spacing(1),
+  card: {
+    boxShadow: theme.shadows[0],
+    padding: theme.spacing(1),
   },
 }));
 const ImageCard = ({children, ...other}) => {
   const classes = useStyles();
-return <Paper className={classes.card}  {...other}>{children}</Paper>
+  return (
+    <Paper className={classes.card} {...other}>
+      {children}
+    </Paper>
+  );
 };
 export default ImageCard;

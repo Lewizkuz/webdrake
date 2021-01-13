@@ -12,6 +12,7 @@ import GridPage from "../GridPage";
 const useStyles = makeStyles((theme) => ({
   head: {
     color: theme.palette.text_primary,
+    textAlign: "center",
   },
   subhead: {
     color: theme.palette.primary.sub,
@@ -24,11 +25,7 @@ export default ({changeTheme, title, subhead}) => {
   const classes = useStyles();
   return (
     <AppBar position="relative">
-      {title ? (
-        <Typography className={classes.head} align="center" variant="h1">
-          {title}
-        </Typography>
-      ) : null}
+      {title ? <h1 className={classes.head}>{title}</h1> : null}
       <GridPage
         rows={[
           {xs: 12, sm: 2},
@@ -42,9 +39,9 @@ export default ({changeTheme, title, subhead}) => {
           </IconButton>
         </Tooltip>
         {subhead ? (
-          <Typography className={classes.subhead} align="center" variant="h5">
+          <p className={classes.subhead} align="center" variant="h5">
             {subhead}
-          </Typography>
+          </p>
         ) : null}
       </GridPage>
     </AppBar>
