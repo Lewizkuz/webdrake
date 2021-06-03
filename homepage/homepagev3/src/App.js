@@ -37,8 +37,8 @@ export default () => {
     <ThemeProvider theme={darkmode ? darkTheme : regularTheme}>
       <CssBaseline />
       <Header
-        title={"Leevi Kukkonen"}
-        subhead={"Webdrake"}
+        title="Leevi Kukkonen"
+        subhead="Webdrake"
         changeTheme={() => setDarkmode(!darkmode)}
       />
 

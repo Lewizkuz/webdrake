@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AppBar,
-  Typography,
   makeStyles,
   IconButton,
   Tooltip,
@@ -33,7 +32,7 @@ export default ({changeTheme, title, subhead}) => {
           {xs: 12, sm: 2},
         ]}
       >
-        <Tooltip title="Change theme" placement={"bottom-end"}>
+        <Tooltip title="Change theme" placement="bottom-end">
           <IconButton onClick={changeTheme}>
             <Brightness4Icon />
           </IconButton>
