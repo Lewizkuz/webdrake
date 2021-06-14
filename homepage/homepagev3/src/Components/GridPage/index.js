@@ -1,10 +1,10 @@
 import React from "react";
-import {Grid, makeStyles} from "@material-ui/core";
-const useStyles = makeStyles({
-  container: {textAlign: "center", margin: "auto"},
-});
-export default ({children, rows, nocenter, ...other}) => {
-  const classes = useStyles();
+import {Grid} from "@material-ui/core";
+// const useStyles = makeStyles({
+//   container: {textAlign: "center", margin: "auto"},
+// });
+export default ({children, rows, childprops,   ...other}) => {
+  // const classes = useStyles();
   return (
     <Grid container {...other}>
       {children ? (
@@ -14,13 +14,13 @@ export default ({children, rows, nocenter, ...other}) => {
               item
               key={i}
               {...rows[i]}
-              className={nocenter && classes.container}
+              {...childprops}
             >
               {e}
             </Grid>
           ))
         ) : (
-          <Grid item xs={12}>
+          <Grid item xs={12} {...childprops}>
             {children}
           </Grid>
         )

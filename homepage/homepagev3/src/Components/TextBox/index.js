@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(1),
   },
 }));
-const ImageCard = ({children, ...other}) => {
+const TextBox = ({children, ...other}) => {
   const classes = useStyles();
   return (
     <Paper className={classes.card} {...other}>
@@ -20,4 +20,4 @@ const ImageCard = ({children, ...other}) => {
     </Paper>
   );
 };
-export default ImageCard;
+export default TextBox;
