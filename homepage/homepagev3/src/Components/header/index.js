@@ -1,46 +1,35 @@
-import React, { forwardRef } from "react";
-import { AppBar, makeStyles, IconButton, Tooltip } from "@material-ui/core";
+import React, { forwardRef, useContext } from "react";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
-import GridPage from "../GridPage";
+import Tooltip from "../tooltip";
 
-const useStyles = makeStyles((theme) => ({
-	head: {
-		color: theme.palette.text_primary,
-		textAlign: "center",
-	},
-	subhead: {
-		color: theme.palette.primary.sub,
-	},
-	navbar: {
-		color: theme.danger,
-	},
-}));
-const Header = ({ changeTheme, title, subhead }) => {
-	const classes = useStyles();
-	return (
-		<AppBar position="relative">
-			{title ? <h1 className={classes.head}>{title}</h1> : null}
-			<GridPage
-				rows={[
-					{ xs: 12, sm: 2 },
-					{ xs: 12, sm: 8 },
-					{ xs: 12, sm: 2 },
-				]}
-			>
-				<Tooltip title="Change theme" placement="bottom-end">
-					<IconButton onClick={changeTheme}>
-						<Brightness4Icon />
-					</IconButton>
-				</Tooltip>
-				{subhead ? (
-					<p className={classes.subhead} align="center" variant="h5">
-						{subhead}
-					</p>
-				) : null}
-			</GridPage>
-		</AppBar>
-	);
-};
-export default forwardRef((props, ref) => (
-	<Header {...props} reference={ref} />
-));
+export default function Header({ changeTheme, title, subhead }) {
+  const theme = useContext(ThemeContext);
+  return (
+    <div style={{ position: "relative" }}>
+      {title ? (
+        <h1
+          style={{
+            color: theme.palette.text_primary,
+            textAlign: "center",
+          }}
+        >
+          {title}
+        </h1>
+      ) : null}
+      <Tooltip title="Change theme" placement="bottom-end">
+        <button onClick={changeTheme}>Change your theme</button>
+      </Tooltip>
+      {subhead ? (
+        <p
+          style={{
+            color: theme.palette.primary.sub,
+          }}
+          align="center"
+          variant="h5"
+        >
+          {subhead}
+        </p>
+      ) : null}
+    </div>
+  );
+}

@@ -1,29 +1,23 @@
 import React from "react";
-import {
-  makeStyles,
-  Paper,
-} from "@material-ui/core";
-const useStyles = makeStyles((theme) => ({
-  card: {
-    boxShadow: theme.shadows[0],
-    padding: theme.spacing(1),
-  },
-  image: {
-    width: "100%",
-    maxWidth: "300px",
-  },
-}));
-const ImageCard =({children, image, ...other}) => {
-  const classes = useStyles();
-  return( <Paper className={classes.card} {...other}>
-  <img
-    alt="profile"
-    src={image}
-    className={classes.image}
-  />
-  <div>
+
+export default function ImageCard({ children, image, ...other }) {
+  return (
+    <div
+      style={{
+        boxShadow: theme.shadows[0],
+        padding: theme.spacing(1),
+      }}
+      {...other}
+    >
+      <img
+        alt="profile"
+        src={image}
+        style={{
+          width: "100%",
+          maxWidth: "300px",
+        }}
+      />
       {children}
-      </div>
-      </Paper>)
-};
-export default ImageCard;
+    </div>
+  );
+}

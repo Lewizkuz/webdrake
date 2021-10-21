@@ -1,36 +1,21 @@
-import React, { forwardRef } from "react";
-import { makeStyles, Divider } from "@material-ui/core";
+import React from "react";
 import TextBox from "../TextBox";
-const useStyles = makeStyles((theme) => ({
-	head: {
-		color: theme.palette.primary.text,
-		textAlign: "center",
-		margin: "0",
-	},
-	subhead: {
-		color: theme.palette.primary.sub,
-	},
-	card: {
-		boxShadow: theme.shadows[0],
-		padding: theme.spacing(1),
-	},
-	image: {
-		width: "100%",
-		maxWidth: "300px",
-	},
-}));
-const Article = ({ head, children, reference, ...other }) => {
-	const classes = useStyles();
-	return (
-		<TextBox {...other} ref={reference}>
-			{head ? <h1 className={classes.head}>{head}</h1> : null}
-			<Divider />
-			{children.map((e) => (
-				<p>{e}</p>
-			))}
-		</TextBox>
-	);
-};
-export default forwardRef((props, ref) => (
-	<Article {...props} reference={ref} />
-));
+export default function Article({ head, children, reference, ...other }) {
+  return (
+    <TextBox {...other} ref={reference}>
+      {head ? (
+        <h1
+          style={{
+            color: theme.palette.primary.text,
+            textAlign: "center",
+            margin: "0",
+          }}
+        >
+          {head}
+        </h1>
+      ) : null}
+      <ht />
+      {children}
+    </TextBox>
+  );
+}
