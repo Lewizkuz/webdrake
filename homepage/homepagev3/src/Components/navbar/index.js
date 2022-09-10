@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import Tabs from "../navigation/tabs";
 function TabPanel(props) {
@@ -23,10 +23,10 @@ TabPanel.propTypes = {
   value: PropTypes.any.isRequired,
 };
 export default function Navbar({ startindex, children, tabheads, ...other }) {
-  const [value, setValue] = React.useState(startindex);
-  const handleChange = (event, newValue) => {
+  const [value, setValue] = useState(startindex);
+  function handleChange(event, newValue) {
     setValue(newValue);
-  };
+  }
   return (
     <div
       style={{
@@ -35,7 +35,7 @@ export default function Navbar({ startindex, children, tabheads, ...other }) {
       {...other}
     >
       <Tabs value={value} onChange={handleChange} centered>
-        {children}
+        {tabheads.map((e, i) => [e, children[i]])}
       </Tabs>
     </div>
   );

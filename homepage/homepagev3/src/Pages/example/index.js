@@ -1,14 +1,13 @@
 import React from "react";
 import ImageCard from "../../Components/ImageCard";
-import Logo from "../../logo512.png";
 export default function Example() {
   return (
     <div>
-      <ImageCard image={Logo}>asd</ImageCard>
-      <ImageCard image={Logo}>asd</ImageCard>
-      <ImageCard image={Logo}>asd</ImageCard>
-      <ImageCard image={Logo}>asd</ImageCard>
-      <ImageCard image={Logo}>asd</ImageCard>
+      <ImageCard image="">Online marketing summary</ImageCard>
+      <ImageCard image="">Johku Summary</ImageCard>
+      <ImageCard image="">Raportti masiina</ImageCard>
+      <ImageCard image="">Muuta</ImageCard>
+      <ImageCard image="">Kivaa</ImageCard>
     </div>
   );
 }

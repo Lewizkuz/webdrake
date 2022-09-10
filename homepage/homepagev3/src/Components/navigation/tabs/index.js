@@ -1,18 +1,17 @@
-// value={value} onChange={handleChange} centered
-
-import { Fragment } from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Tabs(props) {
-  const { content, defaultValue, onChange, centered, ...other } = props;
-  const [value, setValue] = useState(null);
-
-  useEffect(() => {
-    setValue(defaultValue);
-    return () => {
-      setValue(null);
-    };
-  }, [defaultValue]);
+  const {
+    children,
+    content,
+    defaultValue,
+    onChange,
+    centered,
+    ...other
+  } = props;
+  const [value, setValue] = useState(defaultValue || 0);
   function handleChange(target) {
+    onChange(target);
     setValue(target);
   }
   return (
@@ -22,20 +21,25 @@ export default function Tabs(props) {
           <div>
             {children.length
               ? children.map((e, i) => (
-                  <Fragment key={i} onClick={handleChange}>
+                  <button
+                    key={i}
+                    onClick={() => {
+                      handleChange(i);
+                    }}
+                  >
                     {e[0]}
-                  </Fragment>
+                  </button>
                 ))
               : null}
           </div>
           {children.length
             ? children.map((e, i) => (
-                <Fragment
+                <div
                   key={i}
-                  style={{ display: value === i ? "none" : undefined }}
+                  style={{ display: value === i ? undefined : "none" }}
                 >
                   {e[1]}
-                </Fragment>
+                </div>
               ))
             : null}
         </div>

@@ -10,8 +10,8 @@ export default function Tooltip(props) {
     setVisible(false);
   }
   return (
-    <Fragment {...other}>
-      <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+    <Fragment>
+      <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} {...other}>
         {children}
       </div>
       {visible ?? <div>{title}</div>}

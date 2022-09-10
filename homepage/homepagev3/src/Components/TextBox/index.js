@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import ThemeContext from "../contexts/themeprovider";
 
 export default function TextBox({ children, ...other }) {
+  const theme = useContext(ThemeContext);
   return (
     <div
       style={{
-        boxShadow: theme.shadows[0],
-        padding: theme.spacing(1),
+        padding: "15px",
       }}
       {...other}
     >
