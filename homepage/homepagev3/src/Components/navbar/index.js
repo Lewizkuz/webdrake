@@ -28,16 +28,9 @@ export default function Navbar({ startindex, children, tabheads, ...other }) {
     setValue(newValue);
   }
   return (
-    <div
-      style={{
-        minHeight: "calc(100vh - 208px)",
-      }}
-      {...other}
-    >
-      <Tabs value={value} onChange={handleChange} centered>
-        {tabheads.map((e, i) => [e, children[i]])}
-      </Tabs>
-    </div>
+    <Tabs value={value} onChange={handleChange} centered {...other}>
+      {tabheads.map((e, i) => [e, children[i]])}
+    </Tabs>
   );
 }
 Navbar.propTypes = {

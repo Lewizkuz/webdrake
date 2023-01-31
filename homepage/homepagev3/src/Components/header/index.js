@@ -8,25 +8,24 @@ export default function Header({ changeTheme, title, subhead }) {
     function () {
       changeTheme(theme.palette.type);
     },
-    [changeTheme]
+    [changeTheme, theme]
   );
 
   return (
-    <div style={{ position: "relative" }}>
+    <div style={{ position: "relative", backgroundColor: "white" }}>
       {title ? (
         <h1
           style={{
             color: theme.palette.text_primary.main,
             textAlign: "center",
+            margin: 0,
           }}
         >
           {title}
         </h1>
       ) : null}
       <Tooltip title="Change theme">
-        <button onClick={() => changeThemeSelection()}>
-          Change your theme
-        </button>
+        <button onClick={changeThemeSelection}>Change your theme</button>
       </Tooltip>
       {subhead ? (
         <p

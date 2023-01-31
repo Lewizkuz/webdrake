@@ -16,7 +16,7 @@ export default function Article({ head, children, reference, ...other }) {
           {head}
         </h1>
       ) : null}
-      <ht />
+      <hr />
       {children}
     </TextBox>
   );

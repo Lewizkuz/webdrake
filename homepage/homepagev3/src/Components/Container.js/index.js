@@ -1,15 +1,14 @@
 import React, { useContext } from "react";
 import ThemeContext from "../contexts/themeprovider";
-
-export default function TextBox({ children, ...other }) {
+export default function Container({ children }) {
   const theme = useContext(ThemeContext);
   return (
     <div
       style={{
-        color: theme.palette.primary.main,
         backgroundColor: theme.palette.paper,
+        margin: 0,
+        padding: 0,
       }}
-      {...other}
     >
       {children}
     </div>

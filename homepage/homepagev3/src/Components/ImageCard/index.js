@@ -7,6 +7,7 @@ export default function ImageCard({ children, image, ...other }) {
     <div
       style={{
         padding: "15px",
+        backgroundColor: theme.palette.secondary.main,
       }}
       {...other}
     >
