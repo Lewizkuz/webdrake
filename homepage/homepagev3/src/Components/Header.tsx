@@ -1,23 +1,18 @@
-import React, { useCallback, useContext } from "react";
+import { useCallback, useContext } from "react";
 import { ThemeContext } from "./contexts/themeContext";
 import { Tooltip } from "./Tooltip";
 
-import React from "react";
-
 type Props = {
-  changeTheme?: () => string;
+  changeTheme?: (arg0: string) => void;
   title?: string;
   subhead?: string;
 };
 
 export function Header({ changeTheme, title, subhead }: Props) {
   const theme = useContext(ThemeContext);
-  const changeThemeSelection = useCallback(
-    function () {
-      changeTheme(theme.palette.type);
-    },
-    [changeTheme, theme]
-  );
+  const changeThemeSelection = useCallback(() => {
+    if (changeTheme) changeTheme(theme.palette.type);
+  }, [changeTheme, theme]);
 
   return (
     <div style={{ position: "relative", backgroundColor: "white" }}>

@@ -1,8 +1,7 @@
-import React, { Fragment } from "react";
 import { Article } from "../../Components";
 
 export function Intro() {
-  const content = [
+  const content: string[] = [
     "Variable, flexible solutions. Upgrade your flow.",
     "nice",
     "sweet",
@@ -11,12 +10,10 @@ export function Intro() {
     "finally",
   ];
   return (
-    <div style={{ margin: "auto", width: [1, 1, 1, 3 / 4] }}>
+    <div style={{ margin: "auto", width: "75%" }}>
       {content.map((label, index) => (
         <Article key={index} head={label}>
-          {content.map((contentRow, contentIndex) => (
-            <Fragment key={contentIndex}>{contentRow}</Fragment>
-          ))}
+          jeejeee
         </Article>
       ))}
     </div>

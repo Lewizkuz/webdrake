@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container, Footer, Header, NavBar } from "./Components";
 import { ThemeProvider } from "./Components/contexts/themeContext";
 import { Examples, About, Intro, Landing } from "./pages";
 
-const themes = {
+interface paletteObj {
+  palette: {
+    type: string;
+    paper: string;
+    box: string;
+    primary: { main: string };
+    secondary: { main: string };
+    text_primary: { main: string };
+    danger: { main: string };
+    error: { main: string };
+    success: { main: string };
+  };
+}
+
+interface themeListTypes {
+  light?: paletteObj;
+  dark?: paletteObj;
+}
+const themeList = {
   light: {
     palette: {
       type: "light",
@@ -32,21 +50,28 @@ const themes = {
   },
 };
 
+interface toggleObjTypes {
+  light: string;
+  dark: string;
+}
+
 const toggleObj = {
   light: "dark",
   dark: "light",
 };
 
 export default function App() {
-  const [themeTag, setThemeTag] = useState("light");
+  const [themeTag, setThemeTag] = useState<string>("light");
 
   function cycleThemes(currentTheme: string) {
-    const nextTheme = currentTheme ? toggleObj[currentTheme] : null;
-    setThemeTag(nextTheme || null);
+    const realCurrentkey = currentTheme as keyof toggleObjTypes;
+    if (!currentTheme) return;
+    const nextTheme = toggleObj[realCurrentkey];
+    setThemeTag(nextTheme);
   }
 
   return (
-    <ThemeProvider value={themes[themeTag]}>
+    <ThemeProvider value={themeList[themeTag as keyof themeListTypes]}>
       <Container>
         <Header
           title="Leevi Kukkonen"

@@ -1,4 +1,4 @@
-import React, { ReactNode, useContext } from "react";
+import { ReactNode, useContext } from "react";
 import { ThemeContext } from "./contexts/themeContext";
 
 type Props = { children?: ReactNode };

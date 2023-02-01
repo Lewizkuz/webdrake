@@ -1,7 +1,12 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ThemeContext } from "./contexts/themeContext";
 
-export function TextBox({ children, ...other }) {
+type Props = {
+  children?: JSX.Element | JSX.Element[] | string | null;
+  image?: string;
+};
+
+export function TextBox({ children, ...other }: Props) {
   const theme = useContext(ThemeContext);
   return (
     <div
@@ -11,7 +16,7 @@ export function TextBox({ children, ...other }) {
       }}
       {...other}
     >
-      {children}
+      {children || null}
     </div>
   );
 }

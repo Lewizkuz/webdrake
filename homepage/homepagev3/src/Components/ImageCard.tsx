@@ -1,7 +1,12 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "./contexts/themeContext";
 
-export function ImageCard({ children, image, ...other }) {
+type Props = {
+  children?: JSX.Element | string;
+  image?: string;
+};
+
+export function ImageCard({ children, image, ...other }: Props) {
   const theme = useContext(ThemeContext);
   return (
     <div
