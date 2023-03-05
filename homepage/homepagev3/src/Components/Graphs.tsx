@@ -1,10 +1,8 @@
-import PropTypes from "prop-types";
-
-Graph.propTypes = {
-  children: PropTypes.node,
-  index: PropTypes.any.isRequired,
-  value: PropTypes.any.isRequired,
+type Props = {
+  children?: (string | JSX.Element)[];
+  index?: number;
+  value?: string;
 };
-export function Graph() {
+export function Graph({ children, index, value }: Props) {
   return <></>;
 }

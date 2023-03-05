@@ -3,10 +3,10 @@ import { Article, TextBox } from "../../Components";
 
 export function About() {
   return (
-    <div style={{ margin: "auto", width: "75%" }}>
+    <div>
       <Article head="Categories">
         <TextBox>
-          <p>jeejee</p>
+          <h1> General description.</h1>
         </TextBox>
       </Article>
     </div>

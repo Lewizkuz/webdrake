@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TextBox } from "../TextBox";
 
 type Props = {
   children?: (string | JSX.Element)[][];
@@ -19,6 +20,7 @@ export default function Tabs(props: Props) {
     <div {...other}>
       {children ? (
         <div>
+          <TextBox>{children[value][0]}</TextBox>
           <div>
             {children.length
               ? children.map((child, childIndex) => (

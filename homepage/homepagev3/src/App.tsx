@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, Footer, Header, NavBar } from "./Components";
+import { Container, Footer, Graph, Header, NavBar } from "./Components";
 import { ThemeProvider } from "./Components/contexts/themeContext";
 import { Examples, About, Intro, Landing } from "./pages";
 
@@ -38,13 +38,13 @@ const themeList = {
   dark: {
     palette: {
       type: "dark",
-      paper: "#202e42",
+      paper: "#18304e",
       box: "#202e42",
-      primary: { main: "blue" },
+      primary: { main: "white" },
       secondary: { main: "red" },
       text_primary: { main: "#d1d5e1" },
       danger: { main: "yellow" },
-      error: { main: "red" },
+      error: { main: "#6fc6e1" },
       success: { main: "green" },
     },
   },
@@ -83,11 +83,13 @@ export default function App() {
           startindex={1}
         >
           <Landing />
+
           <About />
           <Intro />
           <Examples />
         </NavBar>
         <Footer />
+        <Graph />
       </Container>
     </ThemeProvider>
   );
