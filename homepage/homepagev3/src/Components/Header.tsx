@@ -1,6 +1,6 @@
 import { useCallback, useContext } from "react";
 import { ThemeContext } from "./contexts/themeContext";
-import { TextBox } from "./TextBox";
+import { Box } from "./Box";
 import { Tooltip } from "./Tooltip";
 
 type Props = {
@@ -28,7 +28,7 @@ export function Header({ changeTheme, title, subhead }: Props) {
           {title}
         </h1>
       ) : null}
-      <TextBox>{theme.palette.type}</TextBox>
+      <Box>{theme.palette.type}</Box>
       <Tooltip title="Change theme">
         <button onClick={changeThemeSelection}>Change your theme</button>
       </Tooltip>

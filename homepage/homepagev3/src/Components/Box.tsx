@@ -6,7 +6,7 @@ type Props = {
   image?: string;
 };
 
-export function TextBox({ children, ...other }: Props) {
+export function Box({ children, ...other }: Props) {
   const theme = useContext(ThemeContext);
   return (
     <div

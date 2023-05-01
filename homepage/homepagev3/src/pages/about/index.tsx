@@ -1,13 +1,12 @@
 import React from "react";
-import { Article, TextBox } from "../../Components";
-
+import { Article } from "../../Components";
+const logo = require("../../img/logo512.png");
 export function About() {
   return (
     <div>
       <Article head="Categories">
-        <TextBox>
-          <h1> General description.</h1>
-        </TextBox>
+        <h1> General description.</h1>
+        <img alt="asdasd" src={logo} />
       </Article>
     </div>
   );

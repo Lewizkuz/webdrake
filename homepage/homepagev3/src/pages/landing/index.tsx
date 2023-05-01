@@ -1,8 +1,8 @@
 import React from "react";
-import { Article } from "../../Components";
+import { TextBox } from "../../Components";
 
 export function Landing() {
   return (
-    <Article>Welcome. This is a landing page. Choose the next page now</Article>
+    <TextBox>Welcome. This is a landing page. Choose the next page now</TextBox>
   );
 }

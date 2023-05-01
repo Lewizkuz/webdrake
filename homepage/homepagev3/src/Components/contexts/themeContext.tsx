@@ -3,6 +3,7 @@ interface paletteObj {
   palette: {
     type: string;
     paper: string;
+    background: string;
     box: string;
     primary: { main: string };
     secondary: { main: string };
@@ -16,6 +17,7 @@ export const ThemeContext = createContext<paletteObj>({
   palette: {
     type: "light",
     paper: "#d4e5fb",
+    background: "#d4e5fb",
     box: "white",
     primary: { main: "#363636" },
     secondary: { main: "#efca88" },

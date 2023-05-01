@@ -1,7 +1,7 @@
-import { TextBox } from "./TextBox";
+import { Box } from "./Box";
 
 type Props = { head?: string; children?: string | JSX.Element | JSX.Element[] };
 
 export function Article({ head, children, ...other }: Props) {
-  return <TextBox {...other}>{children}</TextBox>;
+  return <Box {...other}>{children}</Box>;
 }
