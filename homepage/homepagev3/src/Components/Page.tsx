@@ -11,7 +11,8 @@ export function Page({ children }: Props) {
         backgroundColor: theme.palette.background,
         margin: 0,
         padding: 0,
-        width: "50%",
+        display: "flex",
+        justifyContent: "center",
       }}
     >
       {children}

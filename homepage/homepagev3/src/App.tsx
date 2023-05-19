@@ -1,8 +1,8 @@
-import { useCallback, useState } from "react";
+import { createElement, useCallback, useState } from "react";
 import { Container, Footer, Graph, Header, NavBar, Page } from "./Components";
 import { ThemeProvider } from "./Components/contexts/themeContext";
-import { Examples, About, Intro, Landing } from "./pages";
-
+import { Tech } from "./pages/";
+const { Examples, About, Intro } = Tech;
 interface paletteObj {
   palette: {
     type: string;
@@ -40,9 +40,9 @@ const themeList = {
     palette: {
       type: "dark",
       paper: "#18304e",
-      background: "white",
+      background: "black",
       box: "#202e42",
-      primary: { main: "white" },
+      primary: { main: "#d3dde7" },
       secondary: { main: "red" },
       text_primary: { main: "#d1d5e1" },
       danger: { main: "yellow" },
@@ -62,7 +62,22 @@ const toggleObj = {
   dark: "light",
 };
 
+const pageMap = {
+  "landing":LandingPage,
+"art":ArtPage,
+"tech"TechPage,
+
+}
+
+const pageByType = (string)=>{
+  if(!Object.hasOwn(pageMap, string))return "wtf happened here!?";
+return createElement(,)
+
+}
+
+
 export default function App() {
+  const [page, setPage] = useState<string>("landing");
   const [themeTag, setThemeTag] = useState<string>("light");
 
   const cycleThemes = useCallback((currentTheme: string) => {
@@ -75,24 +90,34 @@ export default function App() {
   return (
     <ThemeProvider value={themeList[themeTag as keyof themeListTypes]}>
       <Page>
-        <Container>
-          <Header
-            title="Leevi Kukkonen"
-            subhead="Webdrake"
-            changeTheme={cycleThemes}
-          />
-          <NavBar
-            tabheads={["Landing", "About", "Introduction", "Examples"]}
-            startindex={1}
-          >
-            <Landing />
-            <About />
-            <Intro />
-            <Examples />
-          </NavBar>
-          <Footer />
-          <Graph />
-        </Container>
+        {page === "landing" ? (
+         
+        ) : (
+          <Container>
+            <button
+              onClick={() => {
+                setPage(() => true);
+              }}
+            >
+              back to landing
+            </button>
+            <Header
+              title="Leevi Kukkonen"
+              subhead="Webdrake"
+              changeTheme={cycleThemes}
+            />
+            <NavBar
+              tabheads={["About", "Introduction", "Examples"]}
+              startindex={1}
+            >
+              <About />
+              <Intro />
+              <Examples />
+            </NavBar>
+            <Footer />
+            <Graph />
+          </Container>
+        )}
       </Page>
     </ThemeProvider>
   );

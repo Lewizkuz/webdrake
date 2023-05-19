@@ -8,10 +8,12 @@ export function Container({ children }: Props) {
   return (
     <div
       style={{
-        backgroundColor: theme.palette.paper,
         margin: 0,
         padding: 0,
+        backgroundColor: theme.palette.paper,
         minHeight: "100vh",
+        width: "100%",
+        maxWidth: "1200px",
       }}
     >
       {children}

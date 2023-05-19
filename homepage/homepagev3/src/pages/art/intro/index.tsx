@@ -1,4 +1,4 @@
-import { Article } from "../../Components";
+import { Article } from "../../../Components";
 
 export function Intro() {
   const content: string[] = [

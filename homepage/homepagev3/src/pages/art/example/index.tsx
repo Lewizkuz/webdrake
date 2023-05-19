@@ -1,5 +1,4 @@
-import React from "react";
-import { ImageCard } from "../../Components";
+import { ImageCard } from "../../../Components";
 
 export function Examples() {
   return (

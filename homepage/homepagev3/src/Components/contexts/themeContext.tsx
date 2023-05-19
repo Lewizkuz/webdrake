@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 interface paletteObj {
   palette: {
     type: string;
@@ -13,7 +13,8 @@ interface paletteObj {
     success: { main: string };
   };
 }
-export const ThemeContext = createContext<paletteObj>({
+
+const ThemeContext = createContext<paletteObj>({
   palette: {
     type: "light",
     paper: "#d4e5fb",
@@ -27,4 +28,21 @@ export const ThemeContext = createContext<paletteObj>({
     success: { main: "green" },
   },
 });
-export const ThemeProvider = ThemeContext.Provider;
+
+type ThemeProviderProto = {
+  children?: JSX.Element | JSX.Element[] | string | null;
+};
+
+const ThemeProvider = ({ children }: ThemeProviderProto) => {
+  // the value that will be given to the context
+  const [currentTheme, setCurrentTheme] = useState("english");
+
+  return (
+    // the Provider gives access to the context to its children
+    <ThemeContext.Provider value={{ currentTheme, setCurrentTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
+export { ThemeContext, ThemeProvider };

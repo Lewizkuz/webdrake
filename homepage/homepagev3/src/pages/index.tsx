@@ -1,6 +1,5 @@
-import { About } from "./about";
-import { Examples } from "./example";
-import { Intro } from "./intro";
-import { Landing } from "./landing";
-
-export { About, Examples, Intro, Landing };
+import { About } from "./tech/about";
+import { Examples } from "./tech/example";
+import { Intro } from "./tech/intro";
+const Tech = { About, Examples, Intro };
+export { Tech };
