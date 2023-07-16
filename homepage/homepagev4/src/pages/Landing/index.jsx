@@ -16,25 +16,28 @@ export const Landing = () => {
   };
   return (
     <main className="landing-main">
-      <div>
-        <DynamicImage url={toggleImage} alt={toggleImage} />
-      </div>
-      <a
-        href={window.location.href + "tech"}
-        onMouseOver={handleImageToggle("tech")}
-        onMouseLeave={handleImageToggle("netural")}
-      >
-        Tech
-      </a>
-      <a
-        href={window.location.href + "art"}
-        onMouseOver={handleImageToggle("art")}
-        onMouseLeave={handleImageToggle("netural")}
-      >
-        Art
-      </a>
-
-      <p>@Leevi Kukkonen 2023</p>
+      <section>
+        <div>
+          <DynamicImage url={toggleImage} alt={toggleImage} />
+        </div>
+        <nav className="landing-nav">
+          <a
+            href={window.location.href + "tech"}
+            onMouseOver={handleImageToggle("tech")}
+            onMouseLeave={handleImageToggle("netural")}
+          >
+            Tech
+          </a>
+          <a
+            href={window.location.href + "art"}
+            onMouseOver={handleImageToggle("art")}
+            onMouseLeave={handleImageToggle("netural")}
+          >
+            Art
+          </a>
+        </nav>
+        <p>@Leevi Kukkonen 2023</p>
+      </section>
     </main>
   );
 };
