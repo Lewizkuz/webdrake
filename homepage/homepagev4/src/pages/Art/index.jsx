@@ -4,7 +4,7 @@ export const Art = () => {
   return (
     <main>
       <nav>
-        <a href={window.location.href.split("/art")[0]}>Back</a>
+        <a href={window.location.href.split("/art")[0]}>Return</a>
       </nav>
       <h1>Art of Leevi Kukkonen</h1>
       <p>Vapaa-aikainen sarjakuvataiteilija ja graafinen suunnitelija</p>
